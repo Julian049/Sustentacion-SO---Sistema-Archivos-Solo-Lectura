@@ -22,12 +22,11 @@ public class SquashFS {
         System.out.println("Construyendo la imagen SquashFS...");
         imageBuild = true;
         System.out.println("Calculando tamaño total de archivos...");
-        for (File file : files) {
-            System.out.println("Archivo: " + file.getPath() + ", Tamaño: " + file.getSize() + " bytes");
-        }
-        System.out.println("Total tamaño de archivos: " + totalSize + " bytes");
         System.out.println("Comprimendo archivos...");
-        compressedSize = (int) (totalSize * 0.6); 
+        compressedSize = (int) (totalSize * 0.6);
+        System.out.println("Total tamaño de archivos: " + totalSize + " bytes");
+        System.out.println("Tamaño comprimido de la imagen SquashFS: " + compressedSize + " bytes");
+        System.out.println("Se hanc comprimido los archivos al 60% de su tamaño original.");
         System.out.println("Imagen SquashFS construida con éxito.");
 
     }
