@@ -46,10 +46,29 @@ public class SquashFS {
         if (imageBuild) {
             System.out.println("No se pueden modificar archivos en una imagen SquashFS ya construida.");
         } else {
+            if (searchFile(path) == null) {
+                System.out.println("Archivo no encontrado: " + path);
+                return;
+            }
             File file = searchFile(path);
             file.setContent(newContent);
             file.setSize(newContent.length());
             System.out.println("Archivo modificado: " + file.getPath());
+        }
+    }
+
+    public void deleteFile(String path) {
+        if (imageBuild) {
+            System.out.println("No se pueden eliminar archivos en una imagen SquashFS que ya esta construida.");
+        } else {
+            File file = searchFile(path);
+            if (file != null) {
+                files.remove(file);
+                totalSize -= file.getSize();
+                System.out.println("Archivo eliminado: " + file.getPath());
+            } else {
+                System.out.println("Archivo no encontrado: " + path);
+            }
         }
     }
 
