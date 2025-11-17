@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 
+//Clase archivo
 public class File {
     private String path;
     private String content;
