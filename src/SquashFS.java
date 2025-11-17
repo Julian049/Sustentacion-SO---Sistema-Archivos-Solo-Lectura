@@ -33,7 +33,6 @@ public class SquashFS {
         double compressionRatio = ((double) (totalSize - compressedSize) / totalSize) * 100;
         System.out.println("Total tamaño de archivos: " + totalSize + " bytes");
         System.out.println("Tamaño comprimido de la imagen SquashFS: " + compressedSize + " bytes");
-        System.out.println("Se han comprimido los archivos al " + (100 - compressionRatio) + "% de su tamaño original.");
         System.out.println("Imagen SquashFS construida con éxito.");
 
     }
